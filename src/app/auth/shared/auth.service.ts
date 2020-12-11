@@ -11,9 +11,8 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) { }
 
-  signup(signupRequestPayload: SignupRequestPayload, formData:FormData): Observable<any> {
-    return this.httpClient.post('https://shrouded-beyond-14016.herokuapp.com/StudentLance/User/create', signupRequestPayload)
-    .pipe(mergeMap(data => this.httpClient.put('https://shrouded-beyond-14016.herokuapp.com/StudentLance/User/postImage',formData)));;
+  signup(signupRequestPayload: SignupRequestPayload): Observable<any> {
+    return this.httpClient.post('https://shrouded-beyond-14016.herokuapp.com/StudentLance/User/create', signupRequestPayload);
   }
 }
 
