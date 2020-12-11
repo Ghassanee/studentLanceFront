@@ -1,0 +1,89 @@
+<div class="register-section">
+    <div class="row justify-content-center">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header" style="text-align: center">
+                    <h4>Create Company</h4>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="createCompanyForm" (ngSubmit)="createCompany()">
+                        <div class="form-group row">
+                            <label for="companyName" class="col-md-4 col-form-label text-md-right">Company Name</label>
+                            <div class="col-md-6">
+                                <input type="text" [formControlName]="'companyName'" id="companyName" class="form-control" name="companyName" required
+                                    autofocus>
+                                <span *ngIf="!createCompanyForm.get('companyName').valid && createCompanyForm.get('companyName').touched">
+                                    Please provide a valid Company Name
+                                </span>                                    
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="companyEmail" class="col-md-4 col-form-label text-md-right">Company Email</label>
+                            <div class="col-md-6">
+                                <input type="text" [formControlName]="'companyEmail'" id="companyEmail" class="form-control" name="companyEmail" required
+                                    autofocus>
+                                <span *ngIf="!createCompanyForm.get('companyEmail').valid && createCompanyForm.get('companyEmail').touched">
+                                    Please provide a valid Company Email
+                                </span>                                    
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                            <div class="col-md-6">
+                                <input type="password" [formControlName]="'password'" id="password" class="form-control" name="password" required>
+                                <span *ngIf="!createCompanyForm.get('password').valid && createCompanyForm.get('password').touched">
+                                    Please provide a valid Password
+                                </span>  
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="location" class="col-md-4 col-form-label text-md-right">Location</label>
+                            <div class="col-md-6">
+                                <input type="text" [formControlName]="'location'" id="location" class="form-control" name="location" required
+                                    autofocus>
+                                <span *ngIf="!createCompanyForm.get('location').valid && createCompanyForm.get('location').touched">
+                                    Please provide a valid location
+                                </span>                                    
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="website" class="col-md-4 col-form-label text-md-right">Website</label>
+                            <div class="col-md-6">
+                                <input type="text" [formControlName]="'website'" id="website" class="form-control" name="website" required
+                                    autofocus>
+                                <span *ngIf="!createCompanyForm.get('website').valid && createCompanyForm.get('website').touched">
+                                    Please provide a valid website
+                                </span>                                    
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
+                            <div class="col-md-6">
+                                <input type="text" [formControlName]="'description'" id="description" class="form-control" name="description" required
+                                    autofocus>
+                                <span *ngIf="!createCompanyForm.get('description').valid && createCompanyForm.get('description').touched">
+                                    Please provide a valid description
+                                </span>                                    
+                            </div>
+                        </div>
+
+                        <span class="col-md-6 offset-md-4">
+                            <button  type="submit" class="sign-up">
+                                Create
+                            </button>
+                            <span style="padding-left: 15px">Existing company? <a routerLink="/login">Log In</a></span>
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

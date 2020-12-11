@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SignupRequestPayload } from '../signup/singup-request.payload';
 import { Observable } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
+import { CreateCompanyPayload } from '../create-company/create-company.payload';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,9 @@ export class AuthService {
     return this.httpClient.post('https://shrouded-beyond-14016.herokuapp.com/StudentLance/User/create', signupRequestPayload);
   }
 
+  createCompany(createCompanyPayload : CreateCompanyPayload) {
+    return this.httpClient.post('https://shrouded-beyond-14016.herokuapp.com/StudentLance/company/', createCompanyPayload);
+  }
    cloneUser(client: SignupRequestPayload) {
     const myClone =  new SignupRequestPayload() ;
     myClone.firstname= client.firstname;
@@ -28,6 +31,18 @@ export class AuthService {
     myClone.skills= client.skills;
     myClone.introduction= client.introduction;
     myClone.userRef = client.userRef;
+    return myClone;
+  }
+  
+  cloneCompany(client: CreateCompanyPayload) {
+    const myClone =  new CreateCompanyPayload() ;
+    myClone.companyEmail= client.companyEmail;
+    myClone.companyRef= client.companyRef;
+    myClone.description= client.description;
+    myClone.location= client.location;
+    myClone.password= client.password;
+    myClone.website= client.website;
+    myClone.companyName= client.companyName;
     return myClone;
   }
 }
