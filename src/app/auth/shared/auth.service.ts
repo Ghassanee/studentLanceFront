@@ -17,7 +17,7 @@ export class AuthService {
   }
 
    cloneUser(client: SignupRequestPayload) {
-    let myClone: SignupRequestPayload;
+    const myClone =  new SignupRequestPayload() ;
     myClone.firstname= client.firstname;
     myClone.lastname= client.lastname;
     myClone.email= client.email;
