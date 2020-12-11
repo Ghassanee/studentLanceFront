@@ -13,7 +13,7 @@ export class AuthService {
   signup(signupRequestPayload: SignupRequestPayload, formData:FormData): Observable<any> {
     return this.httpClient.post('https://shrouded-beyond-14016.herokuapp.com/StudentLance/User/create', signupRequestPayload);
   }
-  postImage(signupRequestPayload: SignupRequestPayload, formData:FormData): Observable<any> {
+  postImage( formData:FormData): Observable<any> {
     return this.httpClient.put('https://shrouded-beyond-14016.herokuapp.com/StudentLance/User/postImage',formData);
   }
 

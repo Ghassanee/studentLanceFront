@@ -62,13 +62,13 @@ export class SignupComponent implements OnInit {
     this.photo = this.signupForm!.get('photo')!.value;
     this.signupRequestPayLoad!.userRef = Math.random().toString(36).substring(7);
 
-    this.formData.append('userRef', JSON.stringify(this.signupRequestPayLoad.userRef) );
+    this.formData.append('userRef', this.signupRequestPayLoad.userRef);
 
     this.authService.signup(this.signupRequestPayLoad, this.formData)
     .subscribe((data: any) => {
-      this.authService.postImage(this.signupRequestPayLoad, this.formData)
-      .subscribe((data: any) => {
-        console.log(data)
+      this.authService.postImage(this.formData)
+      .subscribe((dta: any) => {
+        console.log(dta)
       });
     });
     
