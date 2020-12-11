@@ -2,10 +2,10 @@ const express = require('express');
 
 const app = express();
 
-app.use(express.static('./dist/student-lence-front'));
+app.use(express.static('./dist/studentLanceFront'));
 
 app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/student-lence-front/'}),
+    res.sendFile('index.html', {root: 'dist/studentLanceFront/'}),
 );
 
 app.listen(process.env.PORT || 8080);
