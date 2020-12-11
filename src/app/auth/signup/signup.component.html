@@ -74,6 +74,16 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="education" class="col-md-4 col-form-label text-md-right">Education</label>
+                            <div class="col-md-6">
+                                <input type="text" [formControlName]="'education'" id="education" class="form-control" name="education" required
+                                    autofocus>
+                                <span *ngIf="!signupForm.get('education').valid && signupForm.get('education').touched">
+                                    Please provide a valid education
+                                </span>                                    
+                            </div>
+                        </div>
                         
                         <div class="form-group row">
                             <label for="experience" class="col-md-4 col-form-label text-md-right">Experience</label>
@@ -97,17 +107,6 @@
                             </div>
                         </div>
  
-  
-                        <div class="form-group row">
-                            <label for="photo" class="col-md-4 col-form-label text-md-right">Photo</label>
-                            <div class="col-md-6">
-                                <input type="file" [formControlName]="'photo'" id="photo" class="form-control" name="photo" required
-                                  (change)="uploadFiles($event)"  autofocus>
-                                <span *ngIf="!signupForm.get('photo').valid && signupForm.get('photo').touched">
-                                    Please provide a valid photo
-                                </span>                                    
-                            </div>
-                        </div>
   
                         <div class="form-group row">
                             <label for="introduction" class="col-md-4 col-form-label text-md-right">Introduction</label>
