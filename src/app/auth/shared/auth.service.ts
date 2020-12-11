@@ -15,8 +15,8 @@ export class AuthService {
     return this.httpClient.post('https://shrouded-beyond-14016.herokuapp.com/StudentLance/User/create', signupRequestPayload);
   }
 
-  createCompany(createCompanyPayload : CreateCompanyPayload) {
-    return this.httpClient.post('https://shrouded-beyond-14016.herokuapp.com/StudentLance/company/create', createCompanyPayload);
+  createCompany(createCompanyPayload : CreateCompanyPayload): Observable<any>  {
+    return this.httpClient.post('https://shrouded-beyond-14016.herokuapp.com/StudentLance/Company/create', createCompanyPayload);
   }
    cloneUser(client: SignupRequestPayload) {
     const myClone =  new SignupRequestPayload() ;
