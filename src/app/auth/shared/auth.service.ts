@@ -27,6 +27,7 @@ export class AuthService {
     myClone.experience= client.experience;
     myClone.skills= client.skills;
     myClone.introduction= client.introduction;
+    myClone.userRef = client.userRef;
     return myClone;
   }
 }

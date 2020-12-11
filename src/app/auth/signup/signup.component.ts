@@ -42,7 +42,6 @@ export class SignupComponent implements OnInit {
       education: new FormControl('',Validators.required),
       experience: new FormControl('',Validators.required),
       skills: new FormControl('',Validators.required),
-      photo: new FormControl('',Validators.required),
       introduction: new FormControl('',Validators.required)
     })
   }
@@ -59,8 +58,6 @@ export class SignupComponent implements OnInit {
     this.signupRequestPayLoad!.skills = this.signupForm!.get('skills')!.value;
     this.signupRequestPayLoad!.introduction = this.signupForm!.get('introduction')!.value;
     this.signupRequestPayLoad!.userRef = Math.random().toString(36).substring(7);
-
-    this.formData.append('userRef', this.authService.cloneUser(this.signupRequestPayLoad).userRef);
 
     this.authService.signup(this.authService.cloneUser(this.signupRequestPayLoad), this.formData)
     .subscribe(data => console.log(data));
