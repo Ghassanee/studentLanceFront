@@ -74,16 +74,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="education" class="col-md-4 col-form-label text-md-right">Education</label>
-                            <div class="col-md-6">
-                                <input type="text" [formControlName]="'education'" id="education" class="form-control" name="education" required
-                                    autofocus>
-                                <span *ngIf="!signupForm.get('education').valid && signupForm.get('education').touched">
-                                    Please provide a valid education
-                                </span>                                    
-                            </div>
-                        </div>
                         
                         <div class="form-group row">
                             <label for="experience" class="col-md-4 col-form-label text-md-right">Experience</label>

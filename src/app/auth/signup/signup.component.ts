@@ -62,7 +62,8 @@ export class SignupComponent implements OnInit {
 
     this.formData.append('userRef', this.authService.cloneUser(this.signupRequestPayLoad).userRef);
 
-    this.authService.signup(this.authService.cloneUser(this.signupRequestPayLoad), this.formData);
+    this.authService.signup(this.authService.cloneUser(this.signupRequestPayLoad), this.formData)
+    .subscribe(data => console.log(data));
     
     
   }
