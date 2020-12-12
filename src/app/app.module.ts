@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateCompanyComponent } from './auth/create-company/create-company.component';
 import { LoginComponent } from './auth/login/login.component';
+import { UserComponent } from './user/user.component';
+import { CompanyComponent } from './company/company.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { LoginComponent } from './auth/login/login.component';
     HeaderComponent,
     SignupComponent,
     CreateCompanyComponent,
-    LoginComponent
+    LoginComponent,
+    UserComponent,
+    CompanyComponent
   ],
   imports: [
     BrowserModule,
