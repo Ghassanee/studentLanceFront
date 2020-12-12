@@ -9,13 +9,15 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateCompanyComponent } from './auth/create-company/create-company.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SignupComponent,
-    CreateCompanyComponent
+    CreateCompanyComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

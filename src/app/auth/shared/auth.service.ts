@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { SignupRequestPayload } from '../signup/singup-request.payload';
 import { Observable } from 'rxjs';
 import { CreateCompanyPayload } from '../create-company/create-company.payload';
+import { LoginPayload } from '../login/login.payload';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,15 @@ export class AuthService {
   createCompany(createCompanyPayload : CreateCompanyPayload): Observable<any>  {
     return this.httpClient.post('https://shrouded-beyond-14016.herokuapp.com/StudentLance/Company/create', createCompanyPayload);
   }
+  
+  loginUser(loginPayload : LoginPayload): Observable<any>{
+    return this.httpClient.get('https://shrouded-beyond-14016.herokuapp.com/StudentLance/User/users/login/${loginPayload.email}/${loginPayload.password}');
+  }
+  
+  loginCompany(loginPayload : LoginPayload): Observable<any>{
+    return this.httpClient.get('https://shrouded-beyond-14016.herokuapp.com/StudentLance/User/company/login/${loginPayload.email}/${loginPayload.password}');
+  }
+
    cloneUser(client: SignupRequestPayload) {
     const myClone =  new SignupRequestPayload() ;
     myClone.firstname= client.firstname;
@@ -45,6 +55,14 @@ export class AuthService {
     myClone.companyName= client.companyName;
     return myClone;
   }
+  
+  cloneLogin(client: LoginPayload) {
+    const myClone =  new LoginPayload() ;
+    myClone.email= client.email;
+    myClone.password= client.password;
+    return myClone;
+  }
+  
 }
 
    
