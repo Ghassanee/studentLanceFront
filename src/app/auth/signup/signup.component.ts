@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from '../shared/auth.service';
 import { SignupRequestPayload } from './singup-request.payload';
 
@@ -9,12 +10,19 @@ import { SignupRequestPayload } from './singup-request.payload';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-   
+  
+  cookieValue!: string;
+  objectCookieValue?: object;
+  hasCookieTrue!: boolean;
+  hasCookieFalse!: boolean;
+  private key = 'myCookie';
+  private objectKey = 'myObjectCookie';
   signupRequestPayLoad: SignupRequestPayload ;
   signupForm?: FormGroup;
   public formData = new FormData();
   error: boolean;
-  constructor(private authService: AuthService) { 
+  isLogged : boolean
+  constructor(private authService: AuthService,  private cookieService: CookieService) { 
     
     this.signupRequestPayLoad ={
         firstname: '',
@@ -61,7 +69,10 @@ export class SignupComponent implements OnInit {
     this.signupRequestPayLoad!.userRef = Math.random().toString(36).substring(7);
 
     this.authService.signup(this.authService.cloneUser(this.signupRequestPayLoad), this.formData)
-    .subscribe(data => console.log(data),
+    .subscribe(data => {
+      console.log(data);
+      this.cookieService.set('user', data);
+    },
     error => {
       this.ngOnInit();
       this.error = true;

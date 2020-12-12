@@ -12,6 +12,9 @@ import { CreateCompanyComponent } from './auth/create-company/create-company.com
 import { LoginComponent } from './auth/login/login.component';
 import { UserComponent } from './user/user.component';
 import { CompanyComponent } from './company/company.component';
+import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { CookieService } from 'ngx-cookie-service';
+
 
 @NgModule({
   declarations: [
@@ -21,16 +24,19 @@ import { CompanyComponent } from './company/company.component';
     CreateCompanyComponent,
     LoginComponent,
     UserComponent,
-    CompanyComponent
+    CompanyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
   ],
-  providers: [],
+  providers: [
+    CookieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
