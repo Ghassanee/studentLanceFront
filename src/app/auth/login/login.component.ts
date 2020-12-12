@@ -53,10 +53,11 @@ export class LoginComponent implements OnInit {
         this.authService.loginUser(this.authService.cloneLogin(this.loginPayload))
       .subscribe(data =>{ console.log(data);
       },
-      error => { this.error = true;} , 
+      error => { this.error = true; this.ngOnInit()} , 
       () => {
         this.error = false;
         this.router.navigate(['/']);
+        this.ngOnInit();
       });
     }
  }

@@ -13,7 +13,7 @@ export class SignupComponent implements OnInit {
   signupRequestPayLoad: SignupRequestPayload ;
   signupForm?: FormGroup;
   public formData = new FormData();
-  
+  error: boolean;
   constructor(private authService: AuthService) { 
     
     this.signupRequestPayLoad ={
@@ -32,6 +32,7 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.error = false;
     this.signupForm = new FormGroup({
       firstname: new FormControl('',Validators.required),
       lastname: new FormControl('',Validators.required),
@@ -60,7 +61,12 @@ export class SignupComponent implements OnInit {
     this.signupRequestPayLoad!.userRef = Math.random().toString(36).substring(7);
 
     this.authService.signup(this.authService.cloneUser(this.signupRequestPayLoad), this.formData)
-    .subscribe(data => console.log(data));
+    .subscribe(data => console.log(data),
+    error => {
+      this.ngOnInit();
+      this.error = true;
+    },
+    ()=> this.ngOnInit());
     
     
   }

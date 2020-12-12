@@ -78,6 +78,9 @@
                             <button  type="submit" class="sign-up">
                                 Create
                             </button>
+                            <span *ngIf="error">
+                                 Email Already exist 
+                            </span>
                             <span style="padding-left: 15px">Existing company? <a routerLink="/login">Log In</a></span>
                         </span>
                     </form>

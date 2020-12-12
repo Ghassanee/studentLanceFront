@@ -55,6 +55,7 @@ export class CreateCompanyComponent implements OnInit {
     () => {
       this.error = false;
       this.router.navigate(['/login']);
+      this.ngOnInit();
   })
 
  }
