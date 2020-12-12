@@ -71,7 +71,7 @@ export class SignupComponent implements OnInit {
     this.authService.signup(this.authService.cloneUser(this.signupRequestPayLoad), this.formData)
     .subscribe(data => {
       console.log(data);
-      this.cookieService.set('user', data);
+      this.cookieService.set('user', JSON.stringify(data));
     },
     error => {
       this.ngOnInit();

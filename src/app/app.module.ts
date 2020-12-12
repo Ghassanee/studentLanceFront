@@ -14,8 +14,8 @@ import { UserComponent } from './user/user.component';
 import { CompanyComponent } from './company/company.component';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
 import { CookieService } from 'ngx-cookie-service';
-
-
+import {MatInputModule} from '@angular/material/input'; 
+import {MatIconModule} from '@angular/material/icon'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +33,8 @@ import { CookieService } from 'ngx-cookie-service';
     ReactiveFormsModule,
     HttpClientModule,
     MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
   ],
   providers: [
     CookieService
