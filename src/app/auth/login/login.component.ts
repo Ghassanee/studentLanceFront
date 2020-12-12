@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.loginPayload!.email = this.loginForm!.get('companyEmail')!.value;
+    this.loginPayload!.email = this.loginForm!.get('email')!.value;
     this.loginPayload!.password = this.loginForm!.get('password')!.value;
     this.choice = this.loginForm!.get('choice')!.value;
     

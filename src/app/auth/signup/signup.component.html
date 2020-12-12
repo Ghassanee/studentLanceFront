@@ -7,6 +7,11 @@
                     <h4>Register</h4>
                 </div>
                 <div class="card-body">
+                    <div>
+                        <span *ngIf="error">
+                            Email already exist 
+                        </span>
+                    </div>
                     <form [formGroup]="signupForm" (ngSubmit)="signup()">
                         <div class="form-group row">
                             <label for="firstname" class="col-md-4 col-form-label text-md-right">Firstname</label>
@@ -124,9 +129,6 @@
                                 Sign Up
                             </button>
                             <span style="padding-left: 15px">Existing user? <a routerLink="/login">Log In</a></span>
-                        </span>
-                        <span *ngIf="error">
-                             Email already exist 
                         </span>
                     </form>
                 </div>

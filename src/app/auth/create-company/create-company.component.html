@@ -7,6 +7,12 @@
                     <h4>Create Company</h4>
                 </div>
                 <div class="card-body">
+                    <div>
+                        <span *ngIf="error">
+                            Email Already exist 
+                        </span>
+                    </div>
+
                     <form [formGroup]="createCompanyForm" (ngSubmit)="createCompany()">
                         <div class="form-group row">
                             <label for="companyName" class="col-md-4 col-form-label text-md-right">Company Name</label>
@@ -78,9 +84,6 @@
                             <button  type="submit" class="sign-up">
                                 Create
                             </button>
-                            <span *ngIf="error">
-                                 Email Already exist 
-                            </span>
                             <span style="padding-left: 15px">Existing company? <a routerLink="/login">Log In</a></span>
                         </span>
                     </form>
