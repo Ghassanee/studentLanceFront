@@ -1,133 +1,186 @@
 
-<mat-card>
-<p>
-
-  <mat-form-field floatLabel='always' appearance="legacy" >
-    <mat-label>{{ user['userRef'] }}</mat-label>
-    <input  [disabled]='true' matInput placeholder="{{ user['firstname'] }}">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
-
-  <mat-form-field floatLabel='always' appearance="legacy" >      
-    <mat-label>Firstname</mat-label>
-    <input  [disabled]='true' matInput placeholder="{{ user['firstname'] }}">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
-
-  <mat-form-field floatLabel='always' appearance="legacy" >
-    <mat-label>Lastname</mat-label>
-    <input  [disabled]='true' matInput placeholder="{{ user['lastname'] }}">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
-
-</p>
-
-<p>
-
-  <mat-form-field floatLabel='always' appearance="legacy" >
-    <mat-label>Phone</mat-label>
-    <input  [disabled]='true' matInput placeholder="{{ user['phone'] }}">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
-
-  <mat-form-field floatLabel='always' appearance="legacy" >
-    <mat-label>Email</mat-label>
-    <input  [disabled]='true' matInput placeholder="{{ user['email'] }}">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
-
-  <mat-form-field floatLabel='always' appearance="legacy" >
-    <mat-label>Address</mat-label>
-    <input  [disabled]='true' matInput placeholder="{{ user['address'] }}">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
-
-</p>
-
-<p>
-  
-  <mat-form-field floatLabel='always' appearance="legacy" >
-    <mat-label>Introduction</mat-label>
-    <input  [disabled]='true' matInput placeholder="{{ user['introduction'] }}">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
-   
-  <mat-form-field floatLabel='always' appearance="legacy" >
-    <mat-label>Experience</mat-label>
-    <input  [disabled]='true' matInput placeholder="{{ user['experience'] }}">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
-
-  <mat-form-field floatLabel='always' appearance="legacy" >
-    <mat-label>Education</mat-label>
-    <input  [disabled]='true' matInput placeholder="{{ user['education'] }}">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
-  
-</p>
-
-<p>
-
-  <mat-form-field floatLabel='always' appearance="legacy" >
-    <mat-label>Skills</mat-label>
-    <input  [disabled]='true'  matInput  placeholder="{{ user['skills'] }}">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
-
-</p>
-</mat-card>
-
-
-    <mat-accordion>
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            This is the expansion title
-          </mat-panel-title>
-          <mat-panel-description>
-            This is a summary of the content
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>This is the primary content of the panel.</p>
-      </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState = true"
-                           (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Self aware panel
-          </mat-panel-title>
-          <mat-panel-description>
-            Currently I am {{panelOpenState ? 'open' : 'closed'}}
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
-      </mat-expansion-panel>
-    </mat-accordion>
+<form>
+  <div class="form-row">
     
-    <mat-accordion>
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            This is the expansion title
-          </mat-panel-title>
-          <mat-panel-description>
-            This is a summary of the content
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>This is the primary content of the panel.</p>
-      </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState1 = true"
-                           (closed)="panelOpenState1 = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Self aware panel
-          </mat-panel-title>
-          <mat-panel-description>
-            Currently I am {{panelOpenState1 ? 'open' : 'closed'}}
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
-      </mat-expansion-panel>
-    </mat-accordion>
-    
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Name</label>
+      <input type="email" class="form-control" id="inputEmail4" disabled placeholder="{{ user['firstname'] +' '+ user['lastname']}}">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Email</label>
+      <input type="email" class="form-control" id="inputPassword4" disabled placeholder="{{ user['email'] }}">
+    </div>
+
+  </div>
   
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="{{ user['address'] }}">
+  </div>
+  
+  <div class="form-group">
+    <label for="inputAddress2">introduction</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="{{ user['introduction'] }}">
+  </div>
+  
+  <div class="form-row">
+  
+    <div class="form-group col-md-6">
+      <label for="inputCity">experience</label>
+      <input type="text" class="form-control" placeholder="{{ user['experience'] }}" id="inputCity">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputCity">education</label>
+      <input type="text" class="form-control" placeholder="{{ user['education'] }}" id="inputCity">
+    </div>
+  
+  </div>
+  
+  <div class="form-group">
+    <label for="inputAddress">phone</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="{{ user['phone'] }}">
+  </div>
+  
+  <div class="form-group">
+    <label for="inputAddress">skills</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="{{ user['skills'] }}">
+  </div>
+
+</form>
+
+
+<div class="container main-section">
+  <div class="row">
+    <div class="col-lg-12 hedding pb-2">
+      <h1> Table Row Toggel </h1>
+    </div>
+    <div class="col-lg-12">
+      <table class="table table-bordered" style="border-collapse:collapse;">
+          <thead>
+              <tr>
+                  <th>No.</th>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>Credit</th>
+                  <th>Debit</th>
+                  <th>Balance</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr colspan="6" data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
+                  <td>1</td>
+                  <td>12 Jan 2018</td>
+                  <td>Good</td>
+                  <td>$150.00</td>
+                  <td> - </td>
+                  <td>$150.00</td>
+              </tr>
+              <tr class="p">
+                  <td colspan="6" class="hiddenRow">
+                    <div class="accordian-body collapse p-3" id="demo1">
+                      <p>No : <span>1</span></p>
+                      <p>Date : <span>12 Jan 2018</span> </p>
+                      <p>Description : <span>Good</span> </p>
+                      <p>Credit : <span>$150.00</span> </p>
+                      <p>Debit : <span></span></p>
+                      <p>Balance : <span>$150.00</span></p>
+                  </div> 
+                </td> 
+              </tr>
+              <tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
+                  <td>2</td>
+                  <td>12 Jan 2018</td>
+                  <td>Good</td>
+                  <td>$11.00</td>
+                  <td> - </td>
+                  <td>$161.00</td>
+              </tr>
+              <tr>
+                  <td colspan="6" class="hiddenRow">
+                    <div id="demo2" class="accordian-body collapse p-3">
+                      <p>No : <span>2</span></p>
+                      <p>Date : <span>12 Jan 2018</span> </p>
+                      <p>Description : <span>Good</span> </p>
+                      <p>Credit : <span>$150.00</span> </p>
+                      <p>Debit : <span></span></p>
+                      <p>Balance : <span>$150.00</span></p>
+                    </div>
+                  </td>
+              </tr>
+          
+              <tr data-toggle="collapse" data-target="#demo3" class="accordion-toggle">
+                  <td>3</td>
+                  <td>12 Jan 2018</td>
+                  <td>Good</td>
+                  <td>$500.00</td>
+                  <td> - </td>
+                  <td>$661.00</td>
+              </tr>
+              <tr>
+                  <td colspan="6"  class="hiddenRow">
+                    <div id="demo3" class="accordian-body collapse p-3">
+                      <p>No : <span>3</span></p>
+                      <p>Date : <span>12 Jan 2018</span> </p>
+                      <p>Description : <span>Good</span> </p>
+                      <p>Credit : <span>$150.00</span> </p>
+                      <p>Debit : <span></span></p>
+                      <p>Balance : <span>$150.00</span></p>
+                    </div>
+                  </td>
+              </tr>
+
+              <tr data-toggle="collapse" data-target="#demo4" class="accordion-toggle">
+                  <td>4</td>
+                  <td>12 Jan 2018</td>
+                  <td>Good</td>
+                  <td>$500.00</td>
+                  <td> - </td>
+                  <td>$661.00</td>
+              </tr>
+              <tr>
+                  <td colspan="6"  class="hiddenRow">
+                    <div id="demo4" class="accordian-body collapse p-3">
+                      <p>No : <span>4</span></p>
+                      <p>Date : <span>12 Jan 2018</span> </p>
+                      <p>Description : <span>Good</span> </p>
+                      <p>Credit : <span>$150.00</span> </p>
+                      <p>Debit : <span></span></p>
+                      <p>Balance : <span>$150.00</span></p>
+                    </div>
+                  </td>
+              </tr>
+
+              <tr data-toggle="collapse" data-target="#demo5" class="accordion-toggle">
+                  <td>5</td>
+                  <td>12 Jan 2018</td>
+                  <td>Good</td>
+                  <td>$500.00</td>
+                  <td> - </td>
+                  <td>$661.00</td>
+              </tr>
+              <tr>
+                  <td colspan="6"  class="hiddenRow">
+                    <div id="demo5" class="accordian-body collapse p-3">
+                      <p>No : <span>5</span></p>
+                      <p>Date : <span>12 Jan 2018</span> </p>
+                      <p>Description : <span>Good</span> </p>
+                      <p>Credit : <span>$150.00</span> </p>
+                      <p>Debit : <span></span></p>
+                      <p>Balance : <span>$150.00</span></p>
+                    </div>
+                  </td>
+              </tr>		
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <script>
+    $('.accordion-toggle').click(function(){
+	$('.hiddenRow').hide();
+	$(this).next('tr').find('.hiddenRow').show();
+});
+  </script>
