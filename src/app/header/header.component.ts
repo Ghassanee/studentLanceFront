@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   company: any;
   ngOnInit(): void {
     if (this.cookieService.check('user')) this.user = JSON.parse(this.cookieService.get('user'));
-    if (this.cookieService.check('comapny')) this.company = JSON.parse(this.cookieService.get('company'));
+    if (this.cookieService.check('company')) this.company = JSON.parse(this.cookieService.get('company'));
     if (this.user != null ){
       this.isLoggedInU = true;
     }
