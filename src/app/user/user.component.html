@@ -1,19 +1,20 @@
 
+<mat-card>
 <p>
 
-  <mat-form-field floatLabel='true' appearance="legacy" >
+  <mat-form-field floatLabel='always' appearance="legacy" >
     <mat-label>{{ user['userRef'] }}</mat-label>
     <input  [disabled]='true' matInput placeholder="{{ user['firstname'] }}">
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
   </mat-form-field>
 
-  <mat-form-field floatLabel='true' appearance="legacy" >      
+  <mat-form-field floatLabel='always' appearance="legacy" >      
     <mat-label>Firstname</mat-label>
     <input  [disabled]='true' matInput placeholder="{{ user['firstname'] }}">
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
   </mat-form-field>
 
-  <mat-form-field floatLabel='true' appearance="legacy" >
+  <mat-form-field floatLabel='always' appearance="legacy" >
     <mat-label>Lastname</mat-label>
     <input  [disabled]='true' matInput placeholder="{{ user['lastname'] }}">
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
@@ -74,6 +75,7 @@
   </mat-form-field>
 
 </p>
+</mat-card>
 
 
     <mat-accordion>

@@ -17,10 +17,9 @@ import { CookieService } from 'ngx-cookie-service';
 import {MatInputModule} from '@angular/material/input'; 
 import {MatIconModule} from '@angular/material/icon'; 
 
-
-
 import {MatExpansionModule} from '@angular/material/expansion'; 
 import {MatGridListModule} from '@angular/material/grid-list'; 
+import {MatCardModule} from '@angular/material/card'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +40,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatInputModule,
     MatIconModule,
     MatGridListModule,
+    MatCardModule,
     MatExpansionModule
   ],
   providers: [
