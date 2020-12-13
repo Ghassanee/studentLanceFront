@@ -28,7 +28,7 @@ body{
 	width: 80%;
 	margin-bottom: 100px;
 }
-input{
+.form-control.desc{
 	pointer-events: none;
 }
 .nav-item{
