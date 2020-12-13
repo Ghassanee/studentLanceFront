@@ -9,14 +9,22 @@ import { CookieService } from 'ngx-cookie-service';
 export class HeaderComponent implements OnInit {
 
   constructor(private cookieService: CookieService) { }
-  isLoggedIn: boolean;
+  isLoggedInU: boolean;
+  isLoggedInC: boolean;
   user: any;
+  company: any;
   ngOnInit(): void {
     this.user = JSON.parse(this.cookieService.get('user'));
-    if (this.user != null){
-      this.isLoggedIn = true;
-    }else{
-      this.isLoggedIn = false;
+    this.company = JSON.parse(this.cookieService.get('company'));
+    if (this.user != null ){
+      this.isLoggedInU = true;
+    }
+    if ( this.company != null){
+      this.isLoggedInC = true;
+    }
+    else{
+      this.isLoggedInU = false;
+      this.isLoggedInC = false;
     }
   }
 

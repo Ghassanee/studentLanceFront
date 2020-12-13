@@ -43,11 +43,12 @@ export class LoginComponent implements OnInit {
     if(this.choice){
       this.authService.loginCompany(this.authService.cloneLogin(this.loginPayload))
     .subscribe(data =>{ console.log(data);
+      this.cookieService.set('company', JSON.stringify(data));
     },
     error => { this.error = true;} , 
     () => {
       this.error = false;
-      this.router.navigate(['/']);
+      this.router.navigate(['/company-dashboard']);
     });
     }
     else{

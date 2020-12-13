@@ -20,7 +20,7 @@
     </div>
     
     <div class="form-group col-md-4">
-      <label for="inputAddress">phone</label>
+      <label for="inputAddress">Phone</label>
       <input type="text" class="form-control" id="inputAddress" disabled placeholder="{{ user['phone'] }}">
     </div>
 
@@ -32,7 +32,7 @@
     </div>
     
     <div class="form-group col-md-6">
-      <label for="inputAddress">skills</label>
+      <label for="inputAddress">Skills</label>
       <input type="text" class="form-control" id="inputAddress" disabled placeholder="{{ user['skills'] }}">
     </div>
   </div>
@@ -40,20 +40,21 @@
   <div class="form-row">
   
     <div class="form-group col-md-6">
-      <label for="inputCity">experience</label>
+      <label for="inputCity">Experience</label>
       <input type="text" class="form-control" disabled placeholder="{{ user['experience'] }}" id="inputCity">
     </div>
 
     <div class="form-group col-md-6">
-      <label for="inputCity">education</label>
+      <label for="inputCity">Education</label>
       <input type="text" class="form-control" disabled placeholder="{{ user['education'] }}" id="inputCity">
     </div>
   
   </div>
   
   <div class="form-group">
-    <label for="inputAddress2">introduction</label>
-    <textarea type="text" class="form-control" id="inputAddress2" disabled placeholder="{{ user['introduction'] }}">
+    <label for="inputAddress2">Introduction</label>
+    <textarea type="text" class="form-control" id="inputAddress2" disabled  placeholder="">
+      {{ user['introduction'] }}
     </textarea>
   </div>
   
@@ -87,7 +88,7 @@
               </tr>
           </thead>
           <tbody>
-            <tr colspan="6" data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
+            <tr colspan="6" data-toggle="collapse" data-target="#demo1" class="accordion-toggle collapsed">
                   <td>1</td>
                   <td>12 Jan 2018</td>
                   <td>Good</td>
@@ -107,7 +108,7 @@
                   </div> 
                 </td> 
               </tr>
-            <tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
+            <tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle collapsed">
                   <td>2</td>
                   <td>12 Jan 2018</td>
                   <td>Good</td>
