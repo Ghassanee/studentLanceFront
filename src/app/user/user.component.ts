@@ -10,6 +10,8 @@ export class UserComponent implements OnInit {
 
   constructor(private cookieService: CookieService) { }
   user: any;
+  panelOpenState: boolean;
+  panelOpenState1: boolean;
   ngOnInit(): void {
     this.user = JSON.parse(this.cookieService.get('user'));
   }
