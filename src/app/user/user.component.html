@@ -1,51 +1,81 @@
 
-{{ user }}
 <p>
-    <mat-form-field appearance="legacy" >
-      <mat-label>{{ user['password'] }}</mat-label>
-      <input  [disabled]='true' matInput placeholder="Placeholder">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
-    <mat-form-field appearance="legacy" >
-      <mat-label>{{ user }}</mat-label>
-      <input  [disabled]='true' matInput placeholder="Placeholder">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="legacy" >
-      <mat-label>{{ user }}</mat-label>
-      <input  [disabled]='true' matInput placeholder="Placeholder">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
-    <mat-form-field appearance="legacy" >
-      <mat-label>L{{ user }}</mat-label>
-      <input  [disabled]='true' matInput placeholder="Placeholder">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="legacy" >
-      <mat-label>{{ user }}</mat-label>
-      <input  [disabled]='true' matInput placeholder="Placeholder">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
-    <mat-form-field appearance="legacy" >
-      <mat-label>{{ user }}</mat-label>
-      <input  [disabled]='true' matInput placeholder="Placeholder">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="legacy" >
-      <mat-label>{{ user }}</mat-label>
-      <input  [disabled]='true' matInput placeholder="Placeholder">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
-  </p>
-  
 
-  <mat-grid-list cols="2" rowHeight="2:1">
+  <mat-form-field [floatLabel]='true' appearance="legacy" >
+    <mat-label>{{ user['userRef'] }}</mat-label>
+    <input  [disabled]='true' matInput placeholder="{{ user['firstname'] }}">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field [floatLabel]='true' appearance="legacy" >      
+    <mat-label>Firstname</mat-label>
+    <input  [disabled]='true' matInput placeholder="{{ user['firstname'] }}">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field [floatLabel]='true' appearance="legacy" >
+    <mat-label>Lastname</mat-label>
+    <input  [disabled]='true' matInput placeholder="{{ user['lastname'] }}">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+
+</p>
+
+<p>
+
+  <mat-form-field [floatLabel]='true' appearance="legacy" >
+    <mat-label>Phone</mat-label>
+    <input  [disabled]='true' matInput placeholder="{{ user['phone'] }}">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field [floatLabel]='true' appearance="legacy" >
+    <mat-label>Email</mat-label>
+    <input  [disabled]='true' matInput placeholder="{{ user['email'] }}">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field [floatLabel]='true' appearance="legacy" >
+    <mat-label>Address</mat-label>
+    <input  [disabled]='true' matInput placeholder="{{ user['address'] }}">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+
+</p>
+
+<p>
+  
+  <mat-form-field [floatLabel]='true' appearance="legacy" >
+    <mat-label>Introduction</mat-label>
+    <input  [disabled]='true' matInput placeholder="{{ user['introduction'] }}">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+   
+  <mat-form-field [floatLabel]='true' appearance="legacy" >
+    <mat-label>Experience</mat-label>
+    <input  [disabled]='true' matInput placeholder="{{ user['experience'] }}">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field [floatLabel]='true' appearance="legacy" >
+    <mat-label>Education</mat-label>
+    <input  [disabled]='true' matInput placeholder="{{ user['education'] }}">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+  
+</p>
+
+<p>
+
+  <mat-form-field [floatLabel]='true' appearance="legacy" >
+    <mat-label>Skills</mat-label>
+    <input  [disabled]='true'  matInput  placeholder="{{ user['skills'] }}">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+
+</p>
+
+
     <mat-accordion>
       <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
@@ -98,5 +128,4 @@
       </mat-expansion-panel>
     </mat-accordion>
     
-  </mat-grid-list>
   

@@ -13,6 +13,8 @@ export class UserComponent implements OnInit {
   panelOpenState: boolean;
   panelOpenState1: boolean;
   ngOnInit(): void {
+    this.panelOpenState = false;
+    this.panelOpenState1 = false;
     this.user = JSON.parse(this.cookieService.get('user'));
   }
 
