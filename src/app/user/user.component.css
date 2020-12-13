@@ -28,7 +28,7 @@ body{
 	width: 80%;
 	margin-bottom: 100px;
 }
-input{
+input, textarea{
 	pointer-events: none;
 }
 .nav-item{
