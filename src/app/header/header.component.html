@@ -25,14 +25,11 @@
                 <a routerLink="/login" class="float-right login mr-2">Login</a>
             </div>
 
-            <div *ngIf="isLoggedInU">
-                <button class="userdetails" routerLink="/user-dashboard" id="dropdownBasic1" ngbDropdownToggle>
+            <div>
+                <button  *ngIf="isLoggedInU" class="userdetails" routerLink="/user-dashboard" id="dropdownBasic1" ngbDropdownToggle>
                     {{ user['firstname'] +' '+user['lastname']  }} <img class="account-icon" src="https://www.redditstatic.com/avatars/avatar_default_08_D4E815.png">
                 </button>
-            </div> 
-
-            <div *ngIf="isLoggedInC">
-                <button class="userdetails" routerLink="/company-dashboard" id="dropdownBasic1" ngbDropdownToggle>
+                <button *ngIf="isLoggedInC" class="userdetails" routerLink="/company-dashboard" id="dropdownBasic1" ngbDropdownToggle>
                     {{ company['companyEmail']   }} <img class="account-icon" src="https://www.redditstatic.com/avatars/avatar_default_05_0DD3BB.png">
                 </button>
             </div> 

@@ -38,3 +38,6 @@ input{
 .collapse {
     visibility: visible !important;
 }
+#myTabContent{
+	margin-top: 20px;
+}
