@@ -12,8 +12,6 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class LoginComponent implements OnInit {
 
-  
-  
   loginPayload: LoginPayload ;
   loginForm?: FormGroup;
   error: boolean;

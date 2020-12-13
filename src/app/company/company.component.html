@@ -52,11 +52,11 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-      aria-selected="true">Home</a>
+      aria-selected="true">Create Job</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-      aria-selected="false">Profile</a>
+      aria-selected="false">Offers</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
@@ -124,14 +124,82 @@
   </div>  
 </div>
   
-  <div class="tab-pane hide" id="profile" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie
-    locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit,
-    blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.
-    Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum
-    PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
-    salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
-    sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
-    stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+  <div class="tab-pane hide" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="register-section">
+        <div class="row justify-content-center">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header" style="text-align: center">
+                        <h4>Create Job</h4>
+                    </div>
+                    <div class="card-body">
+                        
+                        <form [formGroup]="jobForm" (ngSubmit)="create()">                      
+                           
+                            <div class="form-group row">
+                                <label for="title" class="col-md-4 col-form-label text-md-right">Title</label>
+                                <div class="col-md-6">
+                                    <input type="text" [formControlName]="'title'" id="title" class="form-control" name="title" required>
+                                    <span *ngIf="!jobForm.get('title').valid && jobForm.get('title').touched">
+                                        Please provide a valid Title
+                                    </span>  
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="responsibilities" class="col-md-4 col-form-label text-md-right">Responsibilities</label>
+                                <div class="col-md-6">
+                                    <input type="text" [formControlName]="'responsibilities'" id="responsibilities" class="form-control" name="responsibilities" required>
+                                    <span *ngIf="!jobForm.get('responsibilities').valid && jobForm.get('responsibilities').touched">
+                                        Please provide a valid Responsibilities
+                                    </span>  
+                                </div>
+                            </div>
+    
+                            <div class="form-group row">
+                                <label for="salary" class="col-md-4 col-form-label text-md-right">Salary</label>
+                                <div class="col-md-6">
+                                    <input type="number" [formControlName]="'salary'" id="salary" class="form-control" name="salary" required>
+                                    <span *ngIf="!jobForm.get('salary').valid && jobForm.get('salary').touched">
+                                        Please provide a valid Salary
+                                    </span>  
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="location" class="col-md-4 col-form-label text-md-right">Location</label>
+                                <div class="col-md-6">
+                                    <input type="text" [formControlName]="'location'" id="location" class="form-control" name="location" required>
+                                    <span *ngIf="!jobForm.get('location').valid && jobForm.get('location').touched">
+                                        Please provide a valid Location
+                                    </span>  
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
+                                <div class="col-md-6">
+                                    <input type="text" [formControlName]="'description'" id="description" class="form-control" name="description" required
+                                        autofocus>
+                                    <span *ngIf="!jobForm.get('description').valid && jobForm.get('description').touched">
+                                        Please provide a valid  Description
+                                    </span>                                    
+                                </div>
+                            </div>
+    
+                            <span class="col-md-6 offset-md-4">
+                                <button  type="submit" class="sign-up">
+                                    Create  
+                                </button>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
   </div>
 
 </div>  
