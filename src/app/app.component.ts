@@ -9,13 +9,20 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AppComponent {
   title = 'studentLanceFront';
-
+  user: any;
+  company: any;
   constructor(private router: Router, private cookieService: CookieService){
-    if (JSON.parse(this.cookieService.get('user')) != null){
+    if (this.cookieService.check('user')) this.user = JSON.parse(this.cookieService.get('user'));
+    if (this.cookieService.check('comapny')) this.company = JSON.parse(this.cookieService.get('company'));
+    if (this.user != null ){
       this.router.navigate(['/user-dashboard']);
-    }else{
+
+    }
+    if ( this.company != null){
+      this.router.navigate(['/company-dashboard']);
+    }
+    else{
       this.router.navigate(['/login']);
     }
-
   }
 }

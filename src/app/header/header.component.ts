@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
     if ( this.company != null){
       this.isLoggedInC = true;
     }
-    else{
+    if ( this.company == null &&  this.user == null){
       this.isLoggedInU = false;
       this.isLoggedInC = false;
     }
