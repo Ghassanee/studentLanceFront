@@ -88,8 +88,8 @@
               </tr>
           </thead>
           <tbody>
-           <div *ngFor="let job of jobs; let i=index">
-            <tr colspan="6" data-toggle="collapse" data-target="{'#demo' + i }" class="accordion-toggle collapsed">
+           <ng-container  *ngFor="let job of jobs; let i=index">
+            <tr colspan="6" data-toggle="collapse" data-target="{{'#demo' + i}}" class="accordion-toggle collapsed">
                   <td>{{ i }}</td>
                   <td>{{job.Reference}}</td>
                   <td>{{job.title}}</td>
@@ -99,7 +99,7 @@
             </tr>
               <tr class="p">
                   <td colspan="6" class="hiddenRow">
-                    <div class="accordian-body  p-3" id="{'demo' + i }">
+                    <div class="accordian-body  p-3" id="{{'demo' + i}}">
                       <p>No : <span>{{ i }}</span></p>
                       <p>jobOpeningRef: <span>{{job.Reference}}</span> </p>
                       <p>title : <span>{{job.title}}</span> </p>
@@ -111,7 +111,7 @@
                   </div> 
                 </td> 
               </tr>
-            </div>
+            </ng-container >
           </tbody>
       </table>
     </div>
