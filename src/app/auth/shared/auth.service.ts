@@ -25,7 +25,7 @@ export class AuthService {
   }
   
   loginCompany(loginPayload : LoginPayload): Observable<any>{
-    return this.httpClient.get(`https://shrouded-beyond-14016.herokuapp.com/StudentLance/User/company/login/${loginPayload.email}/${loginPayload.password}`);
+    return this.httpClient.get(`https://shrouded-beyond-14016.herokuapp.com/StudentLance/Company/company/login/${loginPayload.email}/${loginPayload.password}`);
   }
 
    cloneUser(client: SignupRequestPayload) {

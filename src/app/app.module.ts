@@ -16,6 +16,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CookieService } from 'ngx-cookie-service';
 import {MatInputModule} from '@angular/material/input'; 
 import {MatIconModule} from '@angular/material/icon'; 
+
+
+
+import {MatExpansionModule} from '@angular/material/expansion'; 
+import {MatGridListModule} from '@angular/material/grid-list'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +40,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    MatGridListModule,
+    MatExpansionModule
   ],
   providers: [
     CookieService
