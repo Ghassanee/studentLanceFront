@@ -11,7 +11,7 @@ export class ServiceService {
   constructor(private httpClient: HttpClient) { }
 
   create(jobPayload: JobPayload): Observable<any> {
-    return this.httpClient.post('https://shrouded-beyond-14016.herokuapp.com/StudentLance/User/create', jobPayload);
+    return this.httpClient.post('https://shrouded-beyond-14016.herokuapp.com/StudentLance/JobOpening/', jobPayload);
   }
 
 
