@@ -9,26 +9,32 @@
   <div id="divno">
   <div class="form-row">
     
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="inputEmail4">Name</label>
       <input type="email" class="form-control" id="inputEmail4" disabled placeholder="{{ user['firstname'] +' '+ user['lastname']}}">
     </div>
 
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
       <label for="inputPassword4">Email</label>
       <input type="email" class="form-control" id="inputPassword4" disabled placeholder="{{ user['email'] }}">
     </div>
+    
+    <div class="form-group col-md-4">
+      <label for="inputAddress">phone</label>
+      <input type="text" class="form-control" id="inputAddress" disabled placeholder="{{ user['phone'] }}">
+    </div>
 
   </div>
-  
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" disabled placeholder="{{ user['address'] }}">
-  </div>
-  
-  <div class="form-group">
-    <label for="inputAddress2">introduction</label>
-    <input type="text" class="form-control" id="inputAddress2" disabled placeholder="{{ user['introduction'] }}">
+  <div class="form-row ">
+    <div class="form-group col-md-6">
+      <label for="inputAddress">Address</label>
+      <input type="text" class="form-control" id="inputAddress" disabled placeholder="{{ user['address'] }}">
+    </div>
+    
+    <div class="form-group col-md-6">
+      <label for="inputAddress">skills</label>
+      <input type="text" class="form-control" id="inputAddress" disabled placeholder="{{ user['skills'] }}">
+    </div>
   </div>
   
   <div class="form-row">
@@ -46,15 +52,12 @@
   </div>
   
   <div class="form-group">
-    <label for="inputAddress">phone</label>
-    <input type="text" class="form-control" id="inputAddress" disabled placeholder="{{ user['phone'] }}">
+    <label for="inputAddress2">introduction</label>
+    <textarea type="text" class="form-control" id="inputAddress2" disabled placeholder="{{ user['introduction'] }}">
+    </textarea>
   </div>
   
-  <div class="form-group">
-    <label for="inputAddress">skills</label>
-    <input type="text" class="form-control" id="inputAddress" disabled placeholder="{{ user['skills'] }}">
-  </div>
-
+ 
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
@@ -69,11 +72,8 @@
 <div class="tab-content" id="myTabContent">
 
   <div class=" tab-pane hide show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <div class="container main-section">
+    <div class="container main-section" style="width: 100%;">
   <div class="row">
-    <div class="col-lg-12 hedding pb-2">
-      <h1> Table Row Toggel </h1>
-    </div>
     <div class="col-lg-12">
       <table class="table table-bordered" style="border-collapse:collapse;">
           <thead>
@@ -97,7 +97,7 @@
             </tr>
               <tr class="p">
                   <td colspan="6" class="hiddenRow">
-                    <div class="accordian-body collapse p-3" id="demo1">
+                    <div class="accordian-body  p-3" id="demo1">
                       <p>No : <span>1</span></p>
                       <p>Date : <span>12 Jan 2018</span> </p>
                       <p>Description : <span>Good</span> </p>
@@ -117,7 +117,7 @@
             </tr>
               <tr>
                   <td colspan="6" class="hiddenRow">
-                    <div id="demo2" class="accordian-body collapse p-3">
+                    <div id="demo2" class="accordian-body  p-3">
                       <p>No : <span>2</span></p>
                       <p>Date : <span>12 Jan 2018</span> </p>
                       <p>Description : <span>Good</span> </p>

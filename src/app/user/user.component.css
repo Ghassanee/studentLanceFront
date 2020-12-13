@@ -26,7 +26,15 @@ body{
 #divno{
 	margin: 0 auto;
 	width: 80%;
+	margin-bottom: 100px;
 }
 input{
 	pointer-events: none;
+}
+.nav-item{
+	width: 50%;
+    text-align: center;
+}
+.collapse {
+    visibility: visible !important;
 }

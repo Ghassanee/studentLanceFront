@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/auth.service';
 import { LoginPayload } from './login.payload';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   error: boolean;
   choice: boolean;
   
-  constructor(private authService: AuthService, private router: Router) { 
+  constructor(private authService: AuthService, private router: Router,  private cookieService: CookieService) { 
     this.loginPayload ={
       email: '',
       password: ''
@@ -52,11 +53,12 @@ export class LoginComponent implements OnInit {
     else{
         this.authService.loginUser(this.authService.cloneLogin(this.loginPayload))
       .subscribe(data =>{ console.log(data);
+      this.cookieService.set('user', JSON.stringify(data));
       },
       error => { this.error = true; this.ngOnInit()} , 
       () => {
         this.error = false;
-        this.router.navigate(['/']);
+        this.router.navigate(['/user-dashboard']);
         this.ngOnInit();
       });
     }
