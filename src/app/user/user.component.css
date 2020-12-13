@@ -13,7 +13,7 @@ body{
 	font-size:25px;
 }
 .main-section{
-	margin-top: 50px;
+	margin-top: 20px;
 }
 .hiddenRow {
     padding: 0 4px !important;
@@ -23,7 +23,7 @@ body{
 .accordian-body span{
 	color:#a2a2a2 !important;
 }
-.divno{
+#divno{
 	margin: 0 auto;
 	width: 80%;
 }
