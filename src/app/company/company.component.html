@@ -68,7 +68,7 @@
         <ng-container  *ngFor="let job of jobs; let i=index">
 
             <p>
-                <button (click)="getUsersPerJob(job.jobOpeningRef)" class="btn btn-primary" type="button" data-toggle="collapse" [attr.data-target]="'#collapseExample' + i" aria-expanded="false" [attr.aria-controls]="'collapseExample' + i">
+                <button  class="btn btn-primary" type="button" data-toggle="collapse" [attr.data-target]="'#collapseExample' + i" aria-expanded="false" [attr.aria-controls]="'collapseExample' + i">
                     {{job.title}} (click)
                 </button>
             </p>
@@ -88,26 +88,28 @@
                 </tr>
             </thead>
             <tbody>
-            <ng-container  *ngFor="let job of usersPerJob[i]; let j=index">
-                <tr colspan="6" data-toggle="collapse"  [attr.data-target]="'#demo' + j + i" class="accordion-toggle collapsed">
+            <ng-container  *ngFor="let jobus of usersPerJob[i]; let j=index">
+                <ng-container  *ngFor="let jobU of jobus; let k=index">
+                <tr colspan="6" data-toggle="collapse"  [attr.data-target]="'#demo' + j + i + k" class="accordion-toggle collapsed">
                     <td>{{ j }}</td>
-                    <td>{{job.user.userRef}}</td>
-                    <td>{{job.user.firstname + job.user.lastname}}</td>
-                    <td>{{job.user.email}}</td>
-                    <td> {{job.user.experience}} </td>
-                    <td>{{job.user.education}}</td>
+                    <td>{{jobU.user.userRef}}</td>
+                    <td>{{jobU.user.firstname + jobU.user.lastname}}</td>
+                    <td>{{jobU.user.email}}</td>
+                    <td> {{jobU.user.experience}} </td>
+                    <td>{{jobU.user.education}}</td>
                 </tr>
                 <tr class="p">
                     <td colspan="6" class="hiddenRow">
-                        <div class="accordian-body  p-3" [id]="'demo' + j + i">
+                        <div class="accordian-body  p-3" [id]="'demo' + j + i + k">
                         <p>No : <span>{{ j }}</span></p>
-                        <p>skills : <span>{{job.user.skills}}</span> </p>
-                        <p>address : <span>{{job.user.address}}</span> </p>
-                        <p>phone : <span>{{job.user.phone}}</span> </p>
+                        <p>skills : <span>{{jobU.user.skills}}</span> </p>
+                        <p>address : <span>{{jobU.user.address}}</span> </p>
+                        <p>phone : <span>{{jobU.user.phone}}</span> </p>
                     </div> 
                     </td> 
                 </tr>
                 </ng-container >
+            </ng-container >
             </tbody>
         </table>
         </div>

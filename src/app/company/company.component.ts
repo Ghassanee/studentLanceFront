@@ -72,6 +72,9 @@ export class CompanyComponent implements OnInit {
   this.jobService.getJobs(this.company.companyRef)
   .subscribe(data =>{ 
     this.jobs = data;
+    data.array.forEach((j: any) => {
+      this.getUsersPerJob(j.jobOpeningRef);
+    });
   });
   
  }
