@@ -32,19 +32,8 @@ export class UserComponent implements OnInit {
     this.panelOpenState = false;
     this.panelOpenState1 = false;
     this.user = JSON.parse(this.cookieService.get('user'));
-    this.userService.getJobs()
-    .subscribe(data =>{ console.log(data);
-      this.jobs = data;
-    });
-    this.userService.getSubmittedJobs(this.user.userRef)
-    .subscribe(data =>{ console.log(data);
-      this.submittedJobs = data;
-    },
-    err => {
-      if(err.status == 404) {
-        this.error = true;
-      } 
-  });
+    
+    
   }
   submit(job: any){
     this.jobUser.jobOpening = job;
@@ -57,4 +46,22 @@ export class UserComponent implements OnInit {
   actionMethod(event: any) {
     event.target.disabled = true;
 }
+
+  getSubmittedJobs(){
+  this.userService.getSubmittedJobs(this.user.userRef)
+    .subscribe(data =>{ console.log(data);
+      this.submittedJobs = data;
+    },
+    err => {
+      if(err.status == 404) {
+        this.error = true;
+      } 
+    }); 
+  }
+  getJobs(){
+  this.userService.getJobs()
+  .subscribe(data =>{ console.log(data);
+    this.jobs = data;
+    }); 
+  }
 }

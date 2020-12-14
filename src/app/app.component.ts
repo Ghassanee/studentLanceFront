@@ -12,11 +12,11 @@ export class AppComponent {
   user: any;
   company: any;
   constructor(private router: Router, private cookieService: CookieService){
+    if (this.router.url == '/' ) {
     if (this.cookieService.check('user')) this.user = JSON.parse(this.cookieService.get('user'));
     if (this.cookieService.check('company')) this.company = JSON.parse(this.cookieService.get('company'));
     if (this.user != null ){
       this.router.navigate(['/user-dashboard']);
-
     }
     if ( this.company != null){
       this.router.navigate(['/company-dashboard']);
@@ -24,5 +24,6 @@ export class AppComponent {
     else{
       this.router.navigate(['/login']);
     }
+  }
   }
 }
