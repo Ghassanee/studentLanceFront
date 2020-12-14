@@ -80,6 +80,7 @@ export class CompanyComponent implements OnInit {
   this.jobService.getUsersPerJob(jobRef)
   .subscribe(data =>{ 
     this.usersPerJob.push(data.user);
+    console.log(this.usersPerJob);
   });
 
  }
