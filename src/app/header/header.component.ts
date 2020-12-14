@@ -30,4 +30,8 @@ export class HeaderComponent implements OnInit {
       this.isLoggedInC = false;
     }
   }
+  logout(){
+    this.cookieService.deleteAll();
+    this.loggedIn();
+  }
 }
