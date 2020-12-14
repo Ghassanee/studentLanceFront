@@ -88,9 +88,8 @@
                 </tr>
             </thead>
             <tbody>
-            <ng-container  *ngFor="let jobus of usersPerJob[i]; let j=index">
-                <ng-container  *ngFor="let jobU of jobus; let k=index">
-                <tr colspan="6" data-toggle="collapse"  [attr.data-target]="'#demo' + j + i + k" class="accordion-toggle collapsed">
+            <ng-container  *ngFor="let jobU of usersPerJob[i]; let j=index">
+                <tr colspan="6" data-toggle="collapse"  [attr.data-target]="'#demo' + j + i " class="accordion-toggle collapsed">
                     <td>{{ j }}</td>
                     <td>{{jobU.user.userRef}}</td>
                     <td>{{jobU.user.firstname + jobU.user.lastname}}</td>
@@ -100,7 +99,7 @@
                 </tr>
                 <tr class="p">
                     <td colspan="6" class="hiddenRow">
-                        <div class="accordian-body  p-3" [id]="'demo' + j + i + k">
+                        <div class="accordian-body  p-3" [id]="'demo' + j + i ">
                         <p>No : <span>{{ j }}</span></p>
                         <p>skills : <span>{{jobU.user.skills}}</span> </p>
                         <p>address : <span>{{jobU.user.address}}</span> </p>
@@ -108,8 +107,8 @@
                     </div> 
                     </td> 
                 </tr>
-                </ng-container >
             </ng-container >
+            
             </tbody>
         </table>
         </div>
