@@ -27,6 +27,7 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getJobs();
     this.error = false;
     this.clicked = false;
     this.panelOpenState = false;

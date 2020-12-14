@@ -15,7 +15,7 @@ export class UserServiceService {
   }
   
   getSubmittedJobs(ref: string): Observable<any>{
-    return this.httpClient.get(`https://shrouded-beyond-14016.herokuapp.com/StudentLance/JobOpening_User/user/${ref}`);
+    return this.httpClient.get(`https://shrouded-beyond-14016.herokuapp.com/StudentLance/JobOpeninng_User/user/${ref}`);
   }
   submitJob(job: JobUserPayload): Observable<any>{
     return this.httpClient.post('https://shrouded-beyond-14016.herokuapp.com/StudentLance/JobOpeninng_User/', job);
