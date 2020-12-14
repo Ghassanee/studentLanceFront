@@ -19,18 +19,18 @@
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                   
                          
-            <div *ngIf="!isLoggedInC && !isLoggedInU">
-                <a (click)="loggedIn()" *ngIf="!(isLoggedInU | async)" routerLink="/sign-up" class="float-right sign-up mr-2">Sign up</a>
-                <a (click)="loggedIn()" *ngIf="!(isLoggedInC | async)" routerLink="/create-company" class="float-right sign-up mr-2">Create Company</a>
-                <a (click)="loggedIn()" *ngIf="!(isLoggedInC | async) && !(isLoggedInU | async)" routerLink="/login" class="float-right login mr-2">Login</a>
-                <a (click)="logout()" *ngIf="(isLoggedInC | async) || (isLoggedInU | async)" routerLink="/login" class="float-right login mr-2">Logout</a>
+            <div *ngIf="!cookieService.check('user') && !isLoggedInU">
+                <a (click)="loggedIn()" *ngIf="!(cookieService.check('user') )" routerLink="/sign-up" class="float-right sign-up mr-2">Sign up</a>
+                <a (click)="loggedIn()" *ngIf="!(cookieService.check('company') )" routerLink="/create-company" class="float-right sign-up mr-2">Create Company</a>
+                <a (click)="loggedIn()" *ngIf="!(cookieService.check('company') ) && !(cookieService.check('user') )" routerLink="/login" class="float-right login mr-2">Login</a>
+                <a (click)="logout()" *ngIf="(cookieService.check('company') ) || (cookieService.check('user') )" routerLink="/login" class="float-right login mr-2">Logout</a>
             </div>
 
             <div>
-                <button (click)="loggedIn()"  *ngIf="(isLoggedInU | async)" class="userdetails" routerLink="/user-dashboard" id="dropdownBasic1" ngbDropdownToggle>
+                <button (click)="loggedIn()"  *ngIf="(cookieService.check('user') )" class="userdetails" routerLink="/user-dashboard" id="dropdownBasic1" ngbDropdownToggle>
                     {{ user['firstname'] +' '+user['lastname']  }} <img class="account-icon" src="https://www.redditstatic.com/avatars/avatar_default_08_D4E815.png">
                 </button>
-                <button (click)="loggedIn()" *ngIf="(isLoggedInC | async)" class="userdetails" routerLink="/company-dashboard" id="dropdownBasic1" ngbDropdownToggle>
+                <button (click)="loggedIn()" *ngIf="(cookieService.check('company') )" class="userdetails" routerLink="/company-dashboard" id="dropdownBasic1" ngbDropdownToggle>
                     {{ company['companyName']   }} <img class="account-icon" src="https://www.redditstatic.com/avatars/avatar_default_05_0DD3BB.png">
                 </button>
             </div> 
