@@ -91,19 +91,19 @@
             <ng-container  *ngFor="let job of usersPerJob[i]; let j=index">
                 <tr colspan="6" data-toggle="collapse"  [attr.data-target]="'#demo' + j + i" class="accordion-toggle collapsed">
                     <td>{{ j }}</td>
-                    <td>{{job.userRef}}</td>
-                    <td>{{job.firstname + job.lastname}}</td>
-                    <td>{{job.email}}</td>
-                    <td> {{job.experience}} </td>
-                    <td>{{job.education}}</td>
+                    <td>{{job.user.userRef}}</td>
+                    <td>{{job.user.firstname + job.user.lastname}}</td>
+                    <td>{{job.user.email}}</td>
+                    <td> {{job.user.experience}} </td>
+                    <td>{{job.user.education}}</td>
                 </tr>
                 <tr class="p">
                     <td colspan="6" class="hiddenRow">
                         <div class="accordian-body  p-3" [id]="'demo' + j + i">
                         <p>No : <span>{{ j }}</span></p>
-                        <p>skills : <span>{{job.skills}}</span> </p>
-                        <p>address : <span>{{job.address}}</span> </p>
-                        <p>phone : <span>{{job.phone}}</span> </p>
+                        <p>skills : <span>{{job.user.skills}}</span> </p>
+                        <p>address : <span>{{job.user.address}}</span> </p>
+                        <p>phone : <span>{{job.user.phone}}</span> </p>
                     </div> 
                     </td> 
                 </tr>

@@ -79,7 +79,7 @@ export class CompanyComponent implements OnInit {
  getUsersPerJob(jobRef : string){
   this.jobService.getUsersPerJob(jobRef)
   .subscribe(data =>{ 
-    this.usersPerJob.push(data['user']);
+    this.usersPerJob.push(data);
     console.log(this.usersPerJob);
   });
 
