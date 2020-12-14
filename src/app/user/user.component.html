@@ -67,7 +67,7 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" id="profile-tab"  (click)="getSubmittedJobs()" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-      aria-selected="false">Subimmited jobs</a>
+      aria-selected="false">Submitted jobs</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
@@ -90,17 +90,17 @@
           </thead>
           <tbody>
            <ng-container  *ngFor="let job of jobs; let i=index">
-            <tr colspan="6" data-toggle="collapse"  [attr.data-target]="'#demo' + i" class="accordion-toggle collapsed">
+            <tr colspan="7" data-toggle="collapse"  [attr.data-target]="'#demo' + i" class="accordion-toggle collapsed">
                   <td>{{ i }}</td>
                   <td>{{job.Reference}}</td>
                   <td>{{job.title}}</td>
-                  <td> {{job.salary}} </td>
                   <td>{{job.location}}</td>
-                  <td>{{job.company.companyRef}}</td>
+                  <td> {{job.salary}} </td>
+                  <td>{{job.company.companyName}}</td>
                   <td><button type="button" (click)="submit(job); actionMethod($event);"  class="btn btn-primary">Ok</button></td>
             </tr>
               <tr class="p">
-                  <td colspan="6" class="hiddenRow">
+                  <td colspan="7" class="hiddenRow">
                     <div class="accordian-body  p-3" [id]="'demo' + i">
                       <p>No : <span>{{ i }}</span></p>
                       <p>jobOpeningRef: <span>{{job.Reference}}</span> </p>
@@ -139,17 +139,17 @@
               </thead>
               <tbody >
                <ng-container  *ngFor="let job of submittedJobs; let i=index">
-                <tr colspan="6" data-toggle="collapse"  [attr.data-target]="'#de' + i" class="accordion-toggle collapsed">
+                <tr colspan="7" data-toggle="collapse"  [attr.data-target]="'#de' + i" class="accordion-toggle collapsed">
                       <td>{{ i }}</td>
                       <td>{{job.Reference}}</td>
                       <td>{{job.jobOpening.title}}</td>
-                      <td> {{job.jobOpening.salary}} </td>
                       <td>{{job.jobOpening.location}}</td>
-                      <td>{{job.jobOpening.company.companyRef}}</td>
+                      <td> {{job.jobOpening.salary}} </td>
+                      <td>{{job.jobOpening.company.companyName}}</td>
                       <td>{{job.status}}</td>
                 </tr>
                   <tr class="p">
-                      <td colspan="6" class="hiddenRow">
+                      <td colspan="7" class="hiddenRow">
                         <div class="accordian-body  p-3" [id]="'de' + i">
                           <p>No : <span>{{ i }}</span></p>
                           <p>jobOpeningRef: <span>{{job.jobOpening.Reference}}</span> </p>

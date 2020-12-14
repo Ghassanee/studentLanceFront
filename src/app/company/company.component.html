@@ -52,15 +52,16 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-      aria-selected="true">Create Job</a>
+      aria-selected="true">Offers</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-      aria-selected="false">Offers</a>
+      aria-selected="false">Create Job</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
 
+  
   <div class=" tab-pane hide show active" id="home" role="tabpanel" aria-labelledby="home-tab">
     <div class="container main-section" style="width: 100%;">
   <div class="row">
@@ -69,54 +70,40 @@
           <thead>
               <tr>
                   <th>No.</th>
-                  <th>Date</th>
-                  <th>Description</th>
-                  <th>Credit</th>
-                  <th>Debit</th>
-                  <th>Balance</th>
+                  <th>Reference</th>
+                  <th>title</th>
+                  <th>location</th>
+                  <th>salary</th>
+                  <th>Company</th>
+                  <th>Submit</th>
               </tr>
           </thead>
           <tbody>
-            <tr colspan="6" data-toggle="collapse" data-target="#demo1" class="accordion-toggle collapsed">
-                  <td>1</td>
-                  <td>12 Jan 2018</td>
-                  <td>Good</td>
-                  <td>$150.00</td>
-                  <td> - </td>
-                  <td>$150.00</td>
+           <ng-container  *ngFor="let job of jobs; let i=index">
+            <tr colspan="7" data-toggle="collapse"  [attr.data-target]="'#demo' + i" class="accordion-toggle collapsed">
+                  <td>{{ i }}</td>
+                  <td>{{job.Reference}}</td>
+                  <td>{{job.title}}</td>
+                  <td>{{job.location}}</td>
+                  <td> {{job.salary}} </td>
+                  <td>{{job.company.companyName}}</td>
+                  <td><button type="button" (click)="submit(job); actionMethod($event);"  class="btn btn-primary">Ok</button></td>
             </tr>
               <tr class="p">
-                  <td colspan="6" class="hiddenRow">
-                    <div class="accordian-body  p-3" id="demo1">
-                      <p>No : <span>1</span></p>
-                      <p>Date : <span>12 Jan 2018</span> </p>
-                      <p>Description : <span>Good</span> </p>
-                      <p>Credit : <span>$150.00</span> </p>
-                      <p>Debit : <span></span></p>
-                      <p>Balance : <span>$150.00</span></p>
+                  <td colspan="7" class="hiddenRow">
+                    <div class="accordian-body  p-3" [id]="'demo' + i">
+                      <p>No : <span>{{ i }}</span></p>
+                      <p>jobOpeningRef: <span>{{job.Reference}}</span> </p>
+                      <p>title : <span>{{job.title}}</span> </p>
+                      <p>company : <span>{{job.company.companyRef}}</span> </p>
+                      <p>location : <span>{{job.location}}</span> </p>
+                      <p>salary <span>{{job.salary}}</span></p>
+                      <p>responsibilities : <span>{{job.responsibilities}}</span></p>
+                      <p>description : <span>{{job.description}}</span></p>
                   </div> 
                 </td> 
               </tr>
-            <tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle collapsed">
-                  <td>2</td>
-                  <td>12 Jan 2018</td>
-                  <td>Good</td>
-                  <td>$11.00</td>
-                  <td> - </td>
-                  <td>$161.00</td>
-            </tr>
-              <tr>
-                  <td colspan="6" class="hiddenRow">
-                    <div id="demo2" class="accordian-body  p-3">
-                      <p>No : <span>2</span></p>
-                      <p>Date : <span>12 Jan 2018</span> </p>
-                      <p>Description : <span>Good</span> </p>
-                      <p>Credit : <span>$150.00</span> </p>
-                      <p>Debit : <span></span></p>
-                      <p>Balance : <span>$150.00</span></p>
-                    </div>
-                  </td>
-              </tr>
+            </ng-container >
           </tbody>
       </table>
     </div>
@@ -124,6 +111,7 @@
   </div>  
 </div>
   
+
   <div class="tab-pane hide" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <div class="register-section">
         <div class="row justify-content-center">
