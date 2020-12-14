@@ -14,6 +14,9 @@ export class HeaderComponent implements OnInit {
   user: any;
   company: any;
   ngOnInit(): void {
+    this.loggedIn();
+  }
+  loggedIn(){
     if (this.cookieService.check('user')) this.user = JSON.parse(this.cookieService.get('user'));
     if (this.cookieService.check('company')) this.company = JSON.parse(this.cookieService.get('company'));
     if (this.user != null ){
@@ -27,5 +30,4 @@ export class HeaderComponent implements OnInit {
       this.isLoggedInC = false;
     }
   }
-
 }

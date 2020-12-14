@@ -14,6 +14,13 @@ export class ServiceService {
     return this.httpClient.post('https://shrouded-beyond-14016.herokuapp.com/StudentLance/JobOpening/', jobPayload);
   }
 
+  getJobs(companyRef : string): Observable<any>{
+    return this.httpClient.get(`https://shrouded-beyond-14016.herokuapp.com/StudentLance/JobOpening/company/${companyRef}`);
+  }
+
+  getUsersPerJob(jobRef : string): Observable<any>{
+    return this.httpClient.get(`https://shrouded-beyond-14016.herokuapp.com/StudentLance/JobOpeninng_User/${jobRef}`);
+  }
 
   cloneJob(job: JobPayload) {
     const myClone =  new JobPayload() ;

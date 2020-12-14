@@ -58,61 +58,68 @@
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
       aria-selected="false">Create Job</a>
   </li>
+
 </ul>
 <div class="tab-content" id="myTabContent">
 
   
   <div class=" tab-pane hide show active" id="home" role="tabpanel" aria-labelledby="home-tab">
     <div class="container main-section" style="width: 100%;">
-  <div class="row">
-    <div class="col-lg-12">
-      <table class="table table-bordered" style="border-collapse:collapse;">
-          <thead>
-              <tr>
-                  <th>No.</th>
-                  <th>Reference</th>
-                  <th>title</th>
-                  <th>location</th>
-                  <th>salary</th>
-                  <th>Company</th>
-                  <th>Submit</th>
-              </tr>
-          </thead>
-          <tbody>
-           <ng-container  *ngFor="let job of jobs; let i=index">
-            <tr colspan="7" data-toggle="collapse"  [attr.data-target]="'#demo' + i" class="accordion-toggle collapsed">
-                  <td>{{ i }}</td>
-                  <td>{{job.Reference}}</td>
-                  <td>{{job.title}}</td>
-                  <td>{{job.location}}</td>
-                  <td> {{job.salary}} </td>
-                  <td>{{job.company.companyName}}</td>
-                  <td><button type="button" (click)="submit(job); actionMethod($event);"  class="btn btn-primary">Ok</button></td>
-            </tr>
-              <tr class="p">
-                  <td colspan="7" class="hiddenRow">
-                    <div class="accordian-body  p-3" [id]="'demo' + i">
-                      <p>No : <span>{{ i }}</span></p>
-                      <p>jobOpeningRef: <span>{{job.Reference}}</span> </p>
-                      <p>title : <span>{{job.title}}</span> </p>
-                      <p>company : <span>{{job.company.companyRef}}</span> </p>
-                      <p>location : <span>{{job.location}}</span> </p>
-                      <p>salary <span>{{job.salary}}</span></p>
-                      <p>responsibilities : <span>{{job.responsibilities}}</span></p>
-                      <p>description : <span>{{job.description}}</span></p>
-                  </div> 
-                </td> 
-              </tr>
-            </ng-container >
-          </tbody>
-      </table>
-    </div>
-  </div>
-  </div>  
-</div>
-  
+        <ng-container  *ngFor="let job of jobs; let i=index">
 
-  <div class="tab-pane hide" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <p>
+                <button (click)="getUsersPerJob(job.jobOpeningRef)" class="btn btn-primary" type="button" data-toggle="collapse" [attr.data-target]="'#collapseExample' + i" aria-expanded="false" [attr.aria-controls]="'collapseExample' + i">
+                    {{job.title}} (click)
+                </button>
+            </p>
+
+            <div class="row collapse" [id]="'collapseExample' + i" >
+        <div class="col-lg-12">
+        <table class="table table-bordered" style="border-collapse:collapse;">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Reference</th>
+                    <th>Name</th>
+                    <th>email</th>
+                    <th>experience</th>
+                    <th>education</th>
+                    <th>Approve</th>
+                </tr>
+            </thead>
+            <tbody>
+            <ng-container  *ngFor="let job of usersPerJob[i]; let j=index">
+                <tr colspan="6" data-toggle="collapse"  [attr.data-target]="'#demo' + j + i" class="accordion-toggle collapsed">
+                    <td>{{ j }}</td>
+                    <td>{{job.userRef}}</td>
+                    <td>{{job.firstname + job.lastname}}</td>
+                    <td>{{job.email}}</td>
+                    <td> {{job.experience}} </td>
+                    <td>{{job.education}}</td>
+                </tr>
+                <tr class="p">
+                    <td colspan="6" class="hiddenRow">
+                        <div class="accordian-body  p-3" [id]="'demo' + j + i">
+                        <p>No : <span>{{ j }}</span></p>
+                        <p>skills : <span>{{job.skills}}</span> </p>
+                        <p>address : <span>{{job.address}}</span> </p>
+                        <p>phone : <span>{{job.phone}}</span> </p>
+                    </div> 
+                    </td> 
+                </tr>
+                </ng-container >
+            </tbody>
+        </table>
+        </div>
+            </div>
+       
+        </ng-container>   
+</div>  
+</div>
+
+
+
+  <div  class="collapse" id="collapseExample" class="tab-pane hide" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <div class="register-section">
         <div class="row justify-content-center">
             <div class="col-md-3"></div>
@@ -189,6 +196,11 @@
         </div>
     </div>
   </div>
+
+ 
+
+
+
 
 </div>  
 </div>

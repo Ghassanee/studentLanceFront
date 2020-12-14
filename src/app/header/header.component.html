@@ -8,7 +8,7 @@
 <header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="flex-grow-1">
-            <a aria-label="Home" class="logo" routerLink="/">
+            <a aria-label="Home" class="logo" (click)="loggedIn()" routerLink="/">
                 <span class="reddit-text">
                     Student Lance
                 </span>
@@ -20,16 +20,16 @@
                   
                          
             <div *ngIf="!isLoggedInC && !isLoggedInU">
-                <a routerLink="/sign-up" class="float-right sign-up mr-2">Sign up</a>
-                <a routerLink="/create-company" class="float-right sign-up mr-2">Create Company</a>
-                <a routerLink="/login" class="float-right login mr-2">Login</a>
+                <a (click)="loggedIn()" routerLink="/sign-up" class="float-right sign-up mr-2">Sign up</a>
+                <a (click)="loggedIn()" routerLink="/create-company" class="float-right sign-up mr-2">Create Company</a>
+                <a (click)="loggedIn()" routerLink="/login" class="float-right login mr-2">Login</a>
             </div>
 
             <div>
-                <button  *ngIf="isLoggedInU" class="userdetails" routerLink="/user-dashboard" id="dropdownBasic1" ngbDropdownToggle>
+                <button (click)="loggedIn()"  *ngIf="isLoggedInU" class="userdetails" routerLink="/user-dashboard" id="dropdownBasic1" ngbDropdownToggle>
                     {{ user['firstname'] +' '+user['lastname']  }} <img class="account-icon" src="https://www.redditstatic.com/avatars/avatar_default_08_D4E815.png">
                 </button>
-                <button *ngIf="isLoggedInC" class="userdetails" routerLink="/company-dashboard" id="dropdownBasic1" ngbDropdownToggle>
+                <button (click)="loggedIn()" *ngIf="isLoggedInC" class="userdetails" routerLink="/company-dashboard" id="dropdownBasic1" ngbDropdownToggle>
                     {{ company['companyName']   }} <img class="account-icon" src="https://www.redditstatic.com/avatars/avatar_default_05_0DD3BB.png">
                 </button>
             </div> 

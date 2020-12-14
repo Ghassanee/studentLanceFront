@@ -18,7 +18,8 @@ export class CompanyComponent implements OnInit {
   company: any;
   panelOpenState: boolean;
   panelOpenState1: boolean;
-
+  jobs: any;
+  usersPerJob: Array<any>;
   constructor(private jobService: ServiceService, private router: Router,  private cookieService: CookieService) {
     this.jobPayload ={
     jobOpeningRef: '',
@@ -41,7 +42,8 @@ export class CompanyComponent implements OnInit {
       responsibilities: new FormControl('', Validators.required),
       location: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
-    })
+    });
+    this.getJobs();
   }
 
 
@@ -64,6 +66,20 @@ export class CompanyComponent implements OnInit {
   })
 
  }
+ 
+ getJobs(){
+  this.jobService.getJobs(this.company.companyRef)
+  .subscribe(data =>{ 
+    this.jobs = data;
+  });
+  
+ }
 
+ getUsersPerJob(jobRef : string){
+  this.jobService.getUsersPerJob(jobRef)
+  .subscribe(data =>{ 
+    this.usersPerJob.push(data.user);
+  });
 
+ }
 }
