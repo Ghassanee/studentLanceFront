@@ -19,7 +19,7 @@ export class ServiceService {
   }
 
   getUsersPerJob(jobRef : string): Observable<any>{
-    return this.httpClient.get(`https://shrouded-beyond-14016.herokuapp.com/StudentLance/JobOpeninng_User/${jobRef}`);
+    return this.httpClient.get(`https://shrouded-beyond-14016.herokuapp.com/StudentLance/JobOpeninng_User/jobOpening/${jobRef}`);
   }
 
   cloneJob(job: JobPayload) {

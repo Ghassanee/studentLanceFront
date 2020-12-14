@@ -21,6 +21,7 @@ export class CompanyComponent implements OnInit {
   jobs: any;
   usersPerJob: Array<any>;
   constructor(private jobService: ServiceService, private router: Router,  private cookieService: CookieService) {
+    this.usersPerJob = [];
     this.jobPayload ={
     jobOpeningRef: '',
     title: '',
